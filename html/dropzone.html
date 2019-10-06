@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="../js/dropzone.js"></script>
+    
+    <title>Document</title>
+</head>
+<style>
+  
+  .pre:hover .rmv{
+      display:block;
+  }
+
+  .rmv{
+      display: none;
+  }
+ 
+    
+</style>
+<body>
+        <div  class="dropzone" id="dropzoneFrom" style="width:700px; height:700px; border:1px solid black;">
+            <div class="fallback">
+              <input name="file" type="file" multiple />
+            </div>
+
+          </div>
+          <div id="preview" style="display:none;">
+                <div style="width:120px; height: 120px; display:inline-block; margin:10px;" class="pre">
+                    <div style="position:relative;">
+                        <img data-dz-thumbnail />
+                        <div data-dz-remove style="position:absolute; top:50%; left:50%; transform: translate( -50%, -50% ); "class="rmv" ><button>삭제</button></div>
+                    </div>
+                    
+                </div>
+         </div>
+                  
+
+          <div>
+              <button id="submit-all">submit</button>
+          </div>
+
+          
+</body>
+<script>
+        Dropzone.options.dropzoneFrom = {
+            url:"/upload",
+            autoProcessQueue: false,
+            acceptedFiles:".png,.jpg,.gif,.bmp,.jpeg",
+            
+            init: function(){
+                var submitButton = document.querySelector('#submit-all');
+                myDropzone = this;
+                submitButton.addEventListener("click", function(){
+                myDropzone.processQueue();
+                });
+                this.on("complete", function(){
+                    if(this.getQueuedFiles().length == 0 && this.getUploadingFiles().length == 0)
+                    {
+                        var _this = this;
+                        _this.removeAllFiles();
+                    }
+                });
+            },
+             previewTemplate: document.querySelector('#preview').innerHTML
+            
+    
+        };
+    </script>
+</html>

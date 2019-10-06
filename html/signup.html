@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <script src="../js/signup.js"></script>
+    <title>INBYUL</title>
+</head>
+<style>
+    
+    body{
+        background-color: #e6e6e6;
+    }
+   
+</style>
+
+<body>
+    <div class="s_ro">
+        <div class="s_gr">
+            <span><b>INBYUL</b></span>
+            <form action="/insertuser" method="POST">
+                <div class="ipst">
+                    <div class="form-group">
+                        <div class="icon">
+                            <div id="uemailalert"></div>        
+                            <input class="form-control" type="text" placeholder="이메일 주소" id="uemail">
+                        </div>    
+                    </div>
+                    <div class="form-group">
+                        <div class="icon">
+                            <div id="uphonealert"></div>        
+                        <input class="form-control" type="text" placeholder="휴대폰 번호(-없이)" id="uphone">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div  class="icon">
+                            <div id="uidalert"></div>        
+                            <input class="form-control" type="text" placeholder="사용자 이름" id="uid">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="icon">
+                            <div id="unamealert"></div>
+                            <input class="form-control" type="text" placeholder="성명" id="uname">    
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="icon">
+                            <div id="upwalert"></div>
+                            <input class="form-control" type="password" placeholder="비밀번호" id="upw">
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="btn btn-primary btn-block">회원가입</button>
+                </div>
+                
+                <div class="alert" ></div>
+            </form>
+        </div>
+        <div class="s_gr_1">
+            계정이 있으신가요? <a href="#">로그인하기</a>   
+        </div>
+    </div>
+</body>
+</html>

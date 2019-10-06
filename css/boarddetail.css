@@ -1,0 +1,31 @@
+main{
+    width:614px;
+}
+.m_1:nth-child(1) { 
+    margin-right: 0px;
+}
+
+@media only screen and (max-width: 600px){
+main {
+    
+    max-width: 600px;
+    width: 100%;
+}
+}
+
+
+@media only screen and (max-width : 1000px) {
+    main{
+        width: 600px;
+    }
+}
+
+.plusbtn{
+    display: flex;
+    justify-content: center;
+}
+
+.plusbtn a{
+    text-decoration: none;
+}
+

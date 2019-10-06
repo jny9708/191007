@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v5.10.2/js/all.js"></script>
+    
+    <title>INBYUL</title>
+    <style>
+        body{
+            background-color: #fafafa;
+        }
+        
+    
+        .f_bar{
+            border-bottom:1px solid #E6E6E6;
+            position : fixed;
+            top : 0;
+            width: 100%;
+            height: 77px;
+            background-color: #FFFFFF;
+            left:0;
+            
+        }
+        .s_bar{
+            padding : 19px;
+            width:50%;
+            margin:auto;
+            display:flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    
+
+        .t_bar{
+           flex-grow: 1;
+           display: flex;
+        }
+
+
+        .logo{
+            font-family: 'Pacifico', cursive;
+            font-size : 23px;
+        }
+
+        .t_bar:nth-child(2){
+            justify-content: center;
+        }
+
+        .t_bar:nth-child(3){
+            justify-content: flex-end;
+        }
+        
+        .t_bar a{
+            margin-left:10px;
+            margin-right:10px;
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .t_bar input{
+            border:1px solid #E6E6E6;
+            height: 25px;
+            width: 215px;
+        }
+        
+        .m_container{
+            margin-top:78px;
+        }
+        main{
+            padding-top:60px;
+            margin:auto;
+            width:935px;
+            height: 100vh;
+            
+            border:1px solid black;
+            
+        }
+        
+        .m_1{
+            border:1px solid black;
+            width:614px;
+        }
+        
+
+        .m_2{
+            position: fixed;
+            width:50px;
+            top:137px;
+            background-color: red;
+            height: 200px;
+        }
+        
+        @media only screen and (max-width : 1200px) {
+
+        }
+
+        /* Medium Devices, Desktops */
+        @media only screen and (max-width : 992px) {
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+    <div class="f_bar">
+        <div class="s_bar">
+            <div class="t_bar">
+                <div class="logo">
+                    Inbyul
+                </div>
+            </div>
+            <div class="t_bar">
+                <input placeholder="검색"/>
+            </div>
+            <div class="t_bar">
+                <a href="#">
+                    <i class="far fa-compass fa-2x"></i>
+                </a>
+                <a href="#">
+                    <i class="far fa-heart fa-2x"></i>
+                </a>
+                <a href="#">
+                    <i class="far fa-user fa-2x"></i>
+                </a>
+                
+            </div>
+
+        </div>
+    </div>
+    </header>
+
+    <section class="m_container">
+        
+        <main> <!-- 50%로 해서 중앙정렬 -->
+            <section class="m_1">
+
+            asdasd
+            </section>
+                
+            <aside>
+                <div class="m_2">
+                    asd
+                </div>
+            </aside>
+            
+
+
+        </main>
+    
+    </section>
+</body>
+</html>

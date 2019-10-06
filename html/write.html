@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="../css/header.css" rel="stylesheet">
+    <link href="../css/write.css" rel="stylesheet">
+    <link href="https://unpkg.com/cropperjs/dist/cropper.css" rel="stylesheet"/>
+    <script src="https://use.fontawesome.com/releases/v5.10.2/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="../js/dropzone.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    
+    <title>INBYUL</title>
+</head>
+<script>
+    var rmvFileArr = new Array(); //배열선언
+    function remove(index){
+            var src = $("#index"+index+" img").attr('src');
+            rmvFileArr.push(src);
+
+            console.log(rmvFileArr);
+            $("#index"+index).empty();
+        }
+
+    $(document).ready(function(){
+        var bcontent= '';
+        $("textarea[name=write_content]").text(bcontent);
+    });
+</script>
+<body>
+    <header>
+            <div class="f_bar">
+                <div class="ff_bar">
+                <div class="s_bar">
+                    <div class="t_bar">
+                        <div class="logo">
+                            <a href="#" style="margin:0px;">Inbyul</a>
+                        </div>
+                    </div>
+                    <div class="t_bar">
+                        <input placeholder="검색"/>
+                    </div>
+                    <div class="t_bar">
+                        <a href="#">
+                            <i class="far fa-compass fa-2x"></i>
+                        </a>
+                        <a href="#">
+                            <i class="far fa-heart fa-2x"></i>
+                        </a>
+                        <a href="#">
+                            <i class="far fa-user fa-2x"></i>
+                        </a>
+                        
+                    </div>
+        
+                </div>
+            </div>
+            </div>
+    </header>
+
+    <section class="m_container">
+        <main class="m_container_f">
+            <div class="write_container">
+                <form action="#">
+                <div class="write_f">
+                    <div class="write_s">
+                        
+                            <img src="../image/profile.jpg"alt="..." class="pro_icon" >
+                        
+                    </div>
+                    <div class="write_s">
+                        <textarea name="write_content"  placeholder="무슨 일이 일어나고 있나요?" class="autosize" ></textarea>
+                    </div>
+                </div>
+                <div class="write_f">
+                    
+                    <div  class="dropzone" id="dropzoneFrom">
+                        <!-- <div class="fallback">
+                            <input name="file" type="file" multiple />
+                        </div> -->
+                        <div class="message-wrap">
+                        <div class="dz-default dz-message">
+                            <span style="font-weight:bold;">여기에 사진을 놓거나 클릭하여 업로드하세요.</span>
+                        </div>
+                        </div>
+
+                        <!-- <div id="index0">
+                        <div style="width:120px;display:inline-block; margin:10px;" >
+                            <div class="pre">
+                                <div style="position:relative;">
+                                    
+                                    <img data-dz-thumbnail src="../image/index_image.jpg" style="width:120px; height: 120px; cursor:auto;"/>
+                                    
+                                    <div data-dz-remove style="position:absolute; top:50%; left:50%; transform: translate( -50%, -50% );cursor:pointer; "class="rmv" onclick="remove(0)" ><i class="far fa-trash-alt fa-2x"></i></div>
+                                </div>
+                            </div>
+                            <div style="cursor:auto;text-decoration:none; display:flex; justify-content: flex-end;">
+                                <a href="#" id="editbutton" style="text-decoration:none; color:black;">편집</a>
+                            </div>
+                            </div>
+                        </div> -->
+
+                    </div>
+                
+
+                    <div id="preview" style="display:none;">
+                            <div style="width:120px; height: 120px; display:inline-block; margin:10px;">
+                                <div class="pre">
+                                    <div style="position:relative;">
+                                        <img data-dz-thumbnail />
+                                        <div data-dz-remove style="position:absolute; top:50%; left:50%; transform: translate( -50%, -50% ); "class="rmv" ><i class="far fa-trash-alt fa-2x"></i></div>
+                                    </div>
+                                </div>
+                                <div style="cursor:auto;text-decoration:none; display:flex; justify-content: flex-end;" >
+                                    <a href="#" data-edmit-button class="editbutton" id="" style="text-decoration:none; color:black;">편집</a>
+                                </div>
+                                </div>
+                    </div>
+                </div>
+                
+            </form>
+            
+        </div>
+            <div class="btn-wrap">
+                <button id="submit-all" class="btn">등록하기</button>
+            </div>
+        </main>
+    </section>
+
+    <!-- <div id="uploading">
+		<svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+  			viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve"  class="svg-sp">
+		    <path fill="green" d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+		      <animateTransform 
+		         attributeName="transform" 
+		         attributeType="XML" 
+		         type="rotate"
+		         dur="1s" 
+		         from="0 50 50"
+		         to="360 50 50" 
+		         repeatCount="indefinite" />
+		  </path>
+        </svg>
+        </div> -->
+        <script src="https://unpkg.com/cropperjs"></script>
+</body>
+
+<script>
+
+    // var wall = document.createElement('div');
+    // wall.style.width='100%';
+    // wall.style.height='100%';
+    // wall.style.zIndex=9999;
+    // wall.style.position='absolute';
+    // wall.style.top=0;
+    // wall.style.left=0;
+    // document.body.appendChild(wall);
+
+
+    var index=0;
+    var fileMap = new Map();
+        $("textarea.autosize").on('keydown keyup', function () {
+          $(this).height(1).height( $(this).prop('scrollHeight')+12 );	
+        });
+        var canvasArr = new Array();
+    </script>
+    <script src="../js/mydropzone.js"></script>
+    <script src="../js/cropperpuls.js"></script>
+</html>
