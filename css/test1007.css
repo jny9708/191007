@@ -1,0 +1,12 @@
+.a{
+    display:flex;
+
+}
+
+.b{
+    border: 1px solid black;
+    max-width: 300px;
+    width:100%;
+    height: 300px;
+
+}
