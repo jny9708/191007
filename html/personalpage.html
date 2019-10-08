@@ -86,13 +86,17 @@
                         </div>
                         <ul class="s-f">
                                 <li>
-                                    <span>게시물</span> <span>1</span>  
+                                    <span>게시물</span> <span id="boardcnt">1</span>  
                                 </li>
                                 <li>
-                                    <span>팔로워</span> <span>1</span>  
+                                        <a href="#" data-toggle="modal" data-target="#followermodal" data-whatever="">
+                                    <span>팔로워</span> <span id="followercnt">1</span>  
+                                    </a>
                                 </li>
                                 <li>
-                                    <span>팔로우</span> <span>1</span>  
+                                        <a href="#" data-toggle="modal" data-target="#followingmodal" data-whatever="">
+                                    <span>팔로우</span> <span id="followingcnt">1</span>  
+                                    </a>
                                 </li>
                             </ul>
                             <div>
@@ -180,7 +184,95 @@
                     </div>
                 </div>
 
+                <div class="modal fade" id="followermodal" tabindex="-1" role="dialog" aria-labelledby="commentmodal" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="commentmodal">팔로워</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+            
+                                    <div class="u-list-f">
+                                            <div class="u-list-s">
+                                                    <img src="../image/profile.jpg" style="width: 44px; height:44px;" >
+                                            </div>
+                                            <div class="u-list-s">
+                                                <div>
+                                                <span style="font-weight: bold; color:#404040">asdasd</span>
+                                                <span>sunnn</span>
+                                                </div>
+                                            </div>
+                                            <div class="u-list-s">
+                                                <button class="btn follow_btn" id="number3" >팔로우</button>
+                                            </div>
+                                        </div>
+                                        <div class="u-list-f">
+                                                <div class="u-list-s">
+                                                        <img src="../image/profile.jpg" style="width: 44px; height:44px;" >
+                                                </div>
+                                                <div class="u-list-s">
+                                                    <div>
+                                                    <span style="font-weight: bold; color:#404040">asdasd</span>
+                                                    <span>sunnn</span>
+                                                    </div>
+                                                </div>
+                                                <div class="u-list-s">
+                                                    <button class="btn follow_btn" id="number4" >팔로우</button>
+                                                </div>
+                                            </div>
+                     
+                          </div>
+                        </div>
+                      </div>
+                </div>
 
+                <div class="modal fade" id="followingmodal" tabindex="-1" role="dialog" aria-labelledby="commentmodal" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="commentmodal">팔로우</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+            
+                                    <div class="u-list-f">
+                                            <div class="u-list-s">
+                                                    <img src="../image/profile.jpg" style="width: 44px; height:44px;" >
+                                            </div>
+                                            <div class="u-list-s">
+                                                <div>
+                                                <span style="font-weight: bold; color:#404040">asdasd</span>
+                                                <span>sunnn</span>
+                                                </div>
+                                            </div>
+                                            <div class="u-list-s">
+                                                <button class="btn follow_btn" id="number3" >팔로우</button>
+                                            </div>
+                                        </div>
+                                        <div class="u-list-f">
+                                                <div class="u-list-s">
+                                                        <img src="../image/profile.jpg" style="width: 44px; height:44px;" >
+                                                </div>
+                                                <div class="u-list-s">
+                                                    <div>
+                                                    <span style="font-weight: bold; color:#404040">asdasd</span>
+                                                    <span>sunnn</span>
+                                                    </div>
+                                                </div>
+                                                <div class="u-list-s">
+                                                    <button class="btn follow_btn" id="number4" >팔로우</button>
+                                                </div>
+                                            </div>
+                     
+                          </div>
+                        </div>
+                      </div>
+                </div>
             
 </body>
 
@@ -211,6 +303,34 @@ $(document).on("click","#followtag",function(e){
     htmls+='</button>';
     htmls+='</a>';
     $("#addbtn").html(htmls);
+});
+
+$(document).on("click",".follow_btn",function(e){
+    var target  = e.target;
+    var targetid = target.id;
+    var no = targetid.replace(/[^0-9]/g,'');
+    console.log(no);
+    $(target).removeClass('follow_btn');
+    $(target).addClass('follow_cc_btn');
+    $(target).text("팔로잉");
+    if(no==3){
+        var cnt = ($("#followingcnt").text()*1)+1
+        $("#followingcnt").text(cnt);
+    }
+});
+
+$(document).on("click",".follow_cc_btn",function(e){
+    var target  = e.target;
+    var targetid = target.id;
+    var no = targetid.replace(/[^0-9]/g,'');
+    console.log(no);
+    $(target).removeClass('follow_cc_btn');
+    $(target).addClass('follow_btn');
+    $(target).text("팔로우");
+    if(no==3){
+        var cnt = ($("#followingcnt").text()*1)-1
+        $("#followingcnt").text(cnt);
+    }
 });
 
 </script>
